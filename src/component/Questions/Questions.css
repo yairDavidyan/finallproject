@@ -1,0 +1,41 @@
+.dh{
+font-family: "Dybbuk";
+font-size:100px ;
+color:palegreen;
+
+}
+.form{
+        margin-left:770px;
+        margin-right:770px; 
+         /* width:100px;*/
+          /* height: 70px;  */
+         /* margin:80px; 
+         padding:10px; */ 
+         font-size: 30px;
+        
+}
+.button2{
+    background-color:palegreen; 
+    font-family:"Alef";
+    border-top-color:palegreen ;
+    border-right-color: palegreen;
+    border-left-color:palegreen ;
+    border-bottom-color: palegreen;
+    text-align: center;
+    
+}
+.button2:hover{
+    background-color:black; 
+    border-top-color:black ;
+    border-right-color: black;
+    border-left-color:black ;
+    border-bottom-color: black;
+}
+.row1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 19%;
+
+}
+
+

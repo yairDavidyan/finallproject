@@ -1,0 +1,30 @@
+.dav{
+
+    font-family:'FrankRuehl Backslanted';
+     text-align:center;
+     margin-left:10% !important;
+     padding-left:10% !important;
+     display: inline-flex;
+     flex-direction: row-reverse;
+     flex-wrap: wrap;
+
+}
+.Breadcrumb{
+      display: inline-flex;
+      color:rgb(148, 238, 148);
+
+}
+.contaier-fluid1{
+    text-align: center;
+    display: flex;
+}
+.h13{
+    font-family:'Dybbuk';
+    color: palegreen;
+    font-size:60px;
+    
+}
+  .img1{
+    margin-right: 50% !important;
+    padding-right: 50% !important;
+  }

@@ -1,0 +1,37 @@
+.form2{
+    margin-left: 40%;
+    margin-right:40%;
+font-family:"Alef";
+
+}
+.mb-3{
+margin-left:auto;
+margin-right:auto; 
+/* width:10px;
+ margin:80px; 
+ padding:10px; */
+
+}
+.button{
+    background-color:palegreen; 
+    font-family:"Alef";
+    border-top-color:palegreen ;
+    border-right-color: palegreen;
+    border-left-color:palegreen ;
+    border-bottom-color: palegreen;
+  
+}
+.button:hover{
+    background-color:black; 
+    border-top-color:black ;
+    border-right-color: black;
+    border-left-color:black ;
+    border-bottom-color: black;
+    
+}
+.h31{
+  color: palegreen;
+    font-family:'Dybbuk';
+    font-size: 350%;
+
+}

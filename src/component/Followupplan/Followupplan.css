@@ -1,0 +1,40 @@
+.form1{
+    font-family:"Alef";
+ 
+    
+    }
+    .mb-31{
+    margin-left:auto;
+     margin-right:auto; 
+    /* margin-left:1100px;
+    margin-right:770px;  */
+    width:500px; 
+    /* text-align: center; */
+     /* margin:80px; 
+     padding:10px; */
+    
+    }
+    .button1{
+        width:70px;
+       font-family:"Alef";
+        background-color:palegreen; 
+        border-top-color:palegreen ;
+        border-right-color: palegreen;
+        border-left-color:palegreen ;
+        border-bottom-color: palegreen;
+      
+    }
+    .button1:hover{
+        background-color:black; 
+        border-top-color:black ;
+        border-right-color: black;
+        border-left-color:black ;
+        border-bottom-color: black;
+      
+    }
+    .h{
+      font-family:'Alef' ;
+      margin-left:auto;
+      margin-right:auto; 
+    }
+  

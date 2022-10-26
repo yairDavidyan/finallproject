@@ -1,0 +1,33 @@
+ .form1{
+    font-family: "Alef";
+    direction: rtl;
+    font-size: 20px; 
+    width:55vh; 
+    padding:20px; 
+    margin-right:1em;
+    margin-left:1em;
+  
+  } 
+.hed{
+    font-family: "Alef"; 
+    margin: auto;
+    font-size:70px;
+ }
+.h3{
+    font-family: "Alef"; 
+    font-size: 20px; 
+    color: palegreen;
+    padding: auto; 
+    margin-top: 20px; 
+   
+  
+}
+.Select{
+ font-size: 20px;
+ 
+ 
+}
+
+.Forms{
+    display:inline-flex;
+} 
