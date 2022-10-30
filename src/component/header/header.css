@@ -22,9 +22,9 @@
 }
 .link{
   text-decoration: none;
-  color:black;
-  margin-right:30px ;
-  
+  color:white;
+  /* margin-right:30px ; */
+  font-size: 20px;
 }
   
 .link:hover{
