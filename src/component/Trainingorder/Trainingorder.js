@@ -1,26 +1,11 @@
-import React, { useEffect, useState } from "react";
-import "./Trainingorder.css";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Breadcrumb,
-  ListGroup,
-  Card,
-} from "react-bootstrap";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
 import axios from "axios";
-import { wait } from "@testing-library/user-event/dist/utils";
+import React, { useEffect, useState } from "react";
+import { Card, ListGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import "./Trainingorder.css";
 
 function Trainingorder(props) {
   // const [Trainingorder, setTrainingorder] = useState()//סדר אימון
-  const [Grouptraining, setGrouptraining] = useState();
   const [combine, setCombine] = useState();
   const [user, setUser] = useState();
   let navigate = useNavigate();
@@ -56,10 +41,10 @@ function Trainingorder(props) {
     let arr1 = [];
     await trainingorder.forEach((order) => {
       typeoftraining.forEach((type) => {
-        if (order.nameimon == type.id) {
+        if (order.nameimon === type.id) {
           arr.push({
             id: order.codegroupes,
-            codeGroupe: groupes.filter((p) => p.id == order.codegroupes)[0]
+            codeGroupe: groupes.filter((p) => p.id === order.codegroupes)[0]
               .name,
             typeTraning: type.sogimon,
             day: type.nameday,
@@ -71,7 +56,7 @@ function Trainingorder(props) {
     });
     arr.forEach((a) => {
       grouptraining.forEach((gt) => {
-        if (a.id == gt.groupeCode) {
+        if (a.id === gt.groupeCode) {
           a.start = gt.start;
           a.finish = gt.finish;
         }
@@ -121,12 +106,12 @@ function Trainingorder(props) {
                       {combine &&
                         combine.length &&
                         combine.map((obj) =>
-                          obj.day == item.day ? (
-                            obj.typeTraning == "אימון יחידני" ? (
+                          obj.day === item.day ? (
+                            obj.typeTraning === "אימון יחידני" ? (
                               <ListGroup.Item
                                 className={
                                   user
-                                    ? obj.codeGroupe == user.groupeId
+                                    ? obj.codeGroupe === user.groupeId
                                       ? "groupColor"
                                       : ""
                                     : ""
@@ -140,11 +125,11 @@ function Trainingorder(props) {
                                   {obj.codeGroupe}
                                 </b>
                               </ListGroup.Item>
-                            ) : obj.typeTraning == "אימון קבוצתי" ? (
+                            ) : obj.typeTraning === "אימון קבוצתי" ? (
                               <ListGroup.Item
                                 className={
                                   user
-                                    ? obj.codeGroupe == user.groupeId
+                                    ? obj.codeGroupe === user.groupeId
                                       ? "groupColor"
                                       : ""
                                     : ""
@@ -162,7 +147,7 @@ function Trainingorder(props) {
                               <ListGroup.Item
                                 className={
                                   user
-                                    ? obj.codeGroupe == user.groupeId
+                                    ? obj.codeGroupe === user.groupeId
                                       ? "groupColor"
                                       : ""
                                     : ""

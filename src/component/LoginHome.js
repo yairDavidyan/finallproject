@@ -1,8 +1,9 @@
-import React, { useState } from "react";
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
-import Fruits from "../assets/Imges/Fruits.png";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Cookies from "universal-cookie";
+import Fruits from "../assets/Imges/Fruits.png";
 
 const linksNavBar = [
   {
@@ -33,12 +34,16 @@ const linksNavBar = [
 
 function LoginHome(props) {
   const [id, setId] = useState("");
+  const cookies = new Cookies();
 
   function checkUser() {
     axios.get("http://localhost:3030/user/getUser").then((res) => {
       console.log(res.data);
       const user = res.data.find((user) => user.id === id);
+      cookies.set("user", user.id);
       if (user) {
+        props.setUserName(user.name);
+        props.setUserId(user.id);
         props.setRegister(true);
         props.setLinksNavBar([...linksNavBar]);
       }

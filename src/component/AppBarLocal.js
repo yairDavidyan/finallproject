@@ -1,4 +1,3 @@
-import AdbIcon from "@mui/icons-material/Adb";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -7,9 +6,13 @@ import Divider from "@mui/material/Divider";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 function AppBarLocal(props) {
+  const navigate = useNavigate();
+  const cookies = new Cookies();
+
   return (
     <AppBar
       position="static"
@@ -17,7 +20,7 @@ function AppBarLocal(props) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -34,7 +37,7 @@ function AppBarLocal(props) {
             }}
           >
             דף הבית
-          </Typography>
+          </Typography> */}
           <Divider orientation="vertical" color="white" />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {props.linksNavBar.map((page) => (
@@ -52,6 +55,46 @@ function AppBarLocal(props) {
               </Button>
             ))}
           </Box>
+          {props.register && (
+            <>
+              {" "}
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                  ml: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                שלום-{props.userName}
+              </Typography>
+              <Button
+                sx={{
+                  borderRadius: 20,
+                  marginTop: 2,
+                  marginBottom: 4,
+                  color: "black",
+                  backgroundColor: "#FEFFFE",
+                }}
+                onClick={() => {
+                  navigate("/");
+                  props.setUserName("");
+                  cookies.remove("user");
+                }}
+                variant="contained"
+                type="submit"
+              >
+                התנתק
+              </Button>
+            </>
+          )}
         </Toolbar>
       </Container>
     </AppBar>

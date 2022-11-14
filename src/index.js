@@ -1,25 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import { Provider } from "react-redux";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import Aboutus from "./component/Aboutus/Aboutus";
-import Questions from "./component/Questions/Questions";
-import Login from "./component/login/Login";
-import Registrationpage from "./component/Registrationpage/Registrationpage.js";
-import Homepage from "./component/homepage/homepage";
-import Recommendations from "./component/Recommendations/Recommendations";
 import Confirmationpage from "./component/Confirmationpage/Confirmationpage";
-import Quesiong from "./component/Quesiong/Quesiong";
-import Trainingexercises from "./component/Trainingexercises/Trainingexercises";
-import Trainingorder from "./component/Trainingorder/Trainingorder";
 import Graph from "./component/graph/graph";
 import Graphd from "./component/graph/graphdaf";
+import Homepage from "./component/homepage/homepage";
+import Login from "./component/login/Login";
 import Menu1 from "./component/menu/menu";
-import { Provider } from "react-redux";
+import Quesiong from "./component/Quesiong/Quesiong";
+import Questions from "./component/Questions/Questions";
+import Recommendations from "./component/Recommendations/Recommendations";
 import store from "./component/Redux/Store";
+import Registrationpage from "./component/Registrationpage/Registrationpage.js";
+import Trainingexercises from "./component/Trainingexercises/Trainingexercises";
+import Trainingorder from "./component/Trainingorder/Trainingorder";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 // , Explanation
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 // import Login from './component/login/Login';
 ReactDOM.render(
   <React.StrictMode>

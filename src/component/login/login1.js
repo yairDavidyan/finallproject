@@ -1,34 +1,13 @@
-import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Card, ListGroup, Modal } from "react-bootstrap";
 import "./login1.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Breadcrumb,
-  ListGroup,
-  Card,
-} from "react-bootstrap";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-  useNavigate1,
-} from "react-router-dom";
 
 export default function MyVerticallyCenteredModal(props) {
-  const [modalShowe, setModalShowe] = useState(false);
   const { description, menu, tasks } = props;
   const [bF, setBF] = useState();
   const [lunch, setLunch] = useState();
   const [dinner, setdinner] = useState();
   const [Snack, setSnack] = useState();
-
-  const navigate = useNavigate();
 
   useEffect(async () => {
     await setBF(menu.breakfast);

@@ -1,21 +1,17 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { Button, Card, Col, Form, Row, Stack } from "react-bootstrap";
-import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import "./App.css";
-import Fruits from "./assets/Imges/Fruits.png";
 
 // , Explanation
 // import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { Outlet } from "react-router-dom";
 import AppBarLocal from "./component/AppBarLocal";
-import { updateUser } from "./component/Redux/Actions/action";
-import { Link, Outlet } from "react-router-dom";
-import Header from "./component/header/header";
 import LoginHome from "./component/LoginHome";
-
-const linksNavBar = [];
+import { updateUser } from "./component/Redux/Actions/action";
 
 function mapStateToProps(state) {
   return {
@@ -27,23 +23,37 @@ function App(props) {
   //const [currentUser, setcurrentUser] = useState()
   const { currentUser, dispatch } = props;
   const [register, setRegister] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userId, setUserId] = useState("");
   const [linksNavBar, setLinksNavBar] = useState([]);
+
   useEffect(() => {
     console.log("test");
     axios.get("http://localhost:3030/user/getUser").then((res) => {
       console.log(res.data);
+      setUserName();
       // setmenu1(res.data);
     });
     dispatch(updateUser(JSON.parse(localStorage.getItem("user"))));
   }, []);
   return (
     <Stack>
-      <AppBarLocal linksNavBar={linksNavBar} />
+      <AppBarLocal
+        linksNavBar={linksNavBar}
+        userName={userName}
+        setUserName={setUserName}
+        register={register}
+      />
       {/* <Header linksNavBar={linksNavBar} /> */}
       {register ? (
-        <Outlet />
+        <Outlet userId={userId} />
       ) : (
-        <LoginHome setRegister={setRegister} setLinksNavBar={setLinksNavBar} />
+        <LoginHome
+          setRegister={setRegister}
+          setLinksNavBar={setLinksNavBar}
+          setUserName={setUserName}
+          setUserId={setUserId}
+        />
       )}
     </Stack>
     // <div className="App">

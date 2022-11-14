@@ -1,21 +1,8 @@
-import React, { useState } from "react";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Breadcrumb,
-  ListGroup,
-  Card,
-  Form,
-  Row,
-  Button,
-  Link as link,
-} from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Graph from "./graph";
 import axios from "axios";
+import React, { useState } from "react";
+import { Button, Form, Row } from "react-bootstrap";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 // import { Bro wserRouter, Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 // import Graphd from "./graphdaf";
 function mapStateToProps(state) {

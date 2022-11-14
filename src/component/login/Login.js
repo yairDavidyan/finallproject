@@ -41,7 +41,6 @@ function Login(props) {
   }
 
   function dddd(e) {
-    debugger;
     console.log(e.name);
     navigate("/Registrationpage", { state: { groupeId: e.name } });
   }

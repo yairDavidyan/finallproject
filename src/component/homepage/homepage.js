@@ -1,6 +1,5 @@
 import React from "react";
 import "./homepage.css";
-import { Breadcrumb } from "react-bootstrap";
 import imeges1 from "../../assets/Imges/imeges1.jpg";
 
 function Homepage(props) {
@@ -9,7 +8,7 @@ function Homepage(props) {
       <div className="contaier-fluid1">
         <div className="row">
           <div className="col-6">
-            <img src={imeges1} className="imeges1" />
+            <img alt="img" src={imeges1} className="imeges1" />
             <div className="img1"></div>
           </div>
         </div>
